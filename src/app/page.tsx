@@ -19,13 +19,13 @@ export default function Home() {
 
       <main className="flex flex-col items-center justify-center flex-grow relative" style={{ zIndex: 1 }}>
         <div className="relative">
-          <h2 className="text-7xl md:text-9xl font-headline glitch" data-text="OPIUM">OPIUM</h2>
+          <h2 className="text-7xl md:text-9xl font-headline glitch" data-text="THE RED ROOM">THE RED ROOM</h2>
         </div>
         <p className="mt-4 text-lg max-w-md">
-          THE LATEST COLLECTION. A DESCENT INTO THE ABYSS OF STYLE. LIMITED PIECES AVAILABLE.
+          EXCLUSIVE PERFORMANCE BY FAULT KAI. AUGUST 9TH. LIMITED TICKETS AVAILABLE.
         </p>
-        <Link href="/shop" className="mt-8 bg-white text-black font-bold py-3 px-8 border-2 border-white hover:bg-black hover:text-white transition-all duration-300 inline-block">
-          ENTER THE VOID
+        <Link href="/show" className="mt-8 bg-brand-red text-black font-bold py-3 px-8 border-2 border-brand-red hover:bg-black hover:text-brand-red transition-all duration-300 inline-block">
+          GET TICKETS NOW
         </Link>
       </main>
 
