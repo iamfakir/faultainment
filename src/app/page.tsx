@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Reveal from './components/Reveal';
 
 export default function Home() {
   return (
@@ -13,20 +14,20 @@ export default function Home() {
           </nav>
         </div>
         <div className="bg-brand-red text-black text-center py-2 px-4 font-bold animate-pulse">
-          TICKETS FOR THE RED ROOM SHOW NOW AVAILABLE! <Link href="/show" className="underline ml-2">GET YOURS</Link>
+          TICKETS FOR THE RED ROOM SHOW NOW AVAILABLE! <Link href="/show" className="underline ml-2">SECURE YOURS</Link>
         </div>
       </header>
 
-      <main className="flex flex-col items-center justify-center flex-grow relative" style={{ zIndex: 1 }}>
+      <main className="flex flex-col items-center justify-center flex-grow relative pt-32" style={{ zIndex: 1 }}>
         <div className="relative">
-          <h2 className="text-7xl md:text-9xl font-headline glitch" data-text="THE RED ROOM">THE RED ROOM</h2>
+          <Reveal><h2 className="text-7xl md:text-9xl font-headline glitch scramble" data-text="THE RED ROOM">THE RED ROOM</h2></Reveal>
         </div>
-        <p className="mt-4 text-lg max-w-md">
-          EXCLUSIVE PERFORMANCE BY FAULT KAI. AUGUST 9TH. LIMITED TICKETS AVAILABLE.
-        </p>
-        <Link href="/show" className="mt-8 bg-brand-red text-black font-bold py-3 px-8 border-2 border-brand-red hover:bg-black hover:text-brand-red transition-all duration-300 inline-block">
-          GET TICKETS NOW
-        </Link>
+        <Reveal className="mt-4 text-lg max-w-md">
+  EXCLUSIVE PERFORMANCE BY FAULT KAI. AUGUST 9TH. LIMITED TICKETS AVAILABLE.
+</Reveal>
+        <Reveal><Link href="/show" className="mt-8 bg-brand-red text-black font-bold py-3 px-8 border-2 border-brand-red hover:bg-black hover:text-brand-red transition-all duration-300 inline-block">
+  ENTER THE RED ROOM
+</Link></Reveal>
       </main>
 
       <footer className="w-full p-4 text-center" style={{ zIndex: 1 }}>
