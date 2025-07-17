@@ -46,23 +46,9 @@ a, button {
 }
 
 a:hover, button:hover {
-  transform: scale(1.05);
   text-shadow: 0 0 5px var(--color-brand-red);
 }
 
-.scramble {
-  transition: all 0.3s;
-}
-
-.scramble:hover {
-  animation: scramble-text 0.5s infinite;
-}
-
-@keyframes scramble-text {
-  0% { letter-spacing: 0em; }
-  50% { letter-spacing: 0.1em; transform: skew(5deg); }
-  100% { letter-spacing: 0em; }
-}
 
 .reveal {
   opacity: 0;

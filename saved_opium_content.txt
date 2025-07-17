@@ -1,3 +1,19 @@
+CURRENT HOMEPAGE DESIGN - SAVED BEFORE CRYPTIC MESSAGE UPDATE
+
+FAULTAINMENT
+Large header with white glow effect, prominent navigation (SHOP, SHOW, ARCHIVE)
+Red banner: "TICKETS FOR THE RED ROOM SHOW NOW AVAILABLE! SECURE YOURS"
+
+Main content:
+- "THE RED ROOM" - Large glitch text effect
+- "EXCLUSIVE PERFORMANCE BY FAULT KAI. AUGUST 9TH. LIMITED TICKETS AVAILABLE."
+- "ENTER THE RED ROOM" button with red styling
+
+Footer: Copyright FAULTAINMENT
+
+This design was focused on promoting The Red Room show with clear call-to-actions and ticket availability messaging.
+
+PREVIOUS OPIUM CONTENT:
 OPIUM
 THE LATEST COLLECTION. A DESCENT INTO THE ABYSS OF STYLE. LIMITED PIECES AVAILABLE.
 
