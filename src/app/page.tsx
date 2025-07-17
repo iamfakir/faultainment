@@ -2,24 +2,11 @@
 import { useEffect, useState } from 'react';
 
 export default function Home() {
-  const [glitchText, setGlitchText] = useState('A NEW SHOW IS COMING');
   const [showCursor, setShowCursor] = useState(true);
   const [location, setLocation] = useState('LOCATION: [REDACTED]');
   const [dotCount, setDotCount] = useState(0);
-  
-  const crypticMessages = [
-    'SIGNAL DETECTED',
-    'FREQUENCY LOCKED',
-    'TRANSMISSION INCOMING',
-    'COORDINATES CONFIRMED',
-    'STANDBY FOR CONTACT'
-  ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setGlitchText(crypticMessages[Math.floor(Math.random() * crypticMessages.length)]);
-    }, 3000);
-    
     const cursorInterval = setInterval(() => {
       setShowCursor(prev => !prev);
     }, 500);
@@ -29,7 +16,6 @@ export default function Home() {
     }, 500);
 
     return () => {
-      clearInterval(interval);
       clearInterval(cursorInterval);
       clearInterval(dotInterval);
     };
@@ -95,20 +81,27 @@ export default function Home() {
            </div>
            
            <h1 className="text-2xl md:text-4xl lg:text-5xl font-headline tracking-wider glitch whitespace-nowrap" 
-               data-text={glitchText}
+               data-text="FAULTAINMENT INCOMING"
                style={{ 
                  color: '#ffffff', 
                  textShadow: '0 0 3px #ffffff',
                  fontWeight: 'bold',
                  lineHeight: '1.2'
                }}>
-             {glitchText}
+             FAULTAINMENT INCOMING
            </h1>
            
            <div className="text-sm font-mono tracking-wider opacity-60 space-y-3">
              <div>{location}</div>
              <div>DATE: [TO BE ANNOUNCED]</div>
              <div>TICKETS: [COMING SOON]</div>
+             <div className="mt-6 pt-4 border-t border-white/10">
+               <div className="text-xs opacity-40 mb-2">SITE CONSTRUCTION</div>
+               <div className="w-full bg-white/10 h-1 rounded">
+                 <div className="bg-white h-1 rounded" style={{width: '85%'}}></div>
+               </div>
+               <div className="text-xs opacity-40 mt-1 text-right">85% COMPLETE</div>
+             </div>
            </div>
            
            <div className="text-xs font-mono tracking-widest opacity-30">
