@@ -27,7 +27,7 @@ export default function Archive() {
     <div className="bg-black text-white min-h-screen flex flex-col">
       <header className="p-4 text-center border-b border-gray-800">
         <Link href="/" className="inline-block mb-4">
-          <h1 className="text-2xl font-headline tracking-widest">FAULTAINMENT</h1>
+          <h1 className="text-2xl font-headline tracking-widest">FAULTAINMENT*</h1>
         </Link>
       </header>
       
@@ -64,7 +64,7 @@ export default function Archive() {
       </main>
       
       <footer className="p-4 text-center border-t border-gray-800">
-        <p>&copy; {new Date().getFullYear()} FAULTAINMENT. ALL RIGHTS RESERVED.</p>
+        <p>&copy; {new Date().getFullYear()} FAULTAINMENT*. ALL RIGHTS RESERVED.</p>
       </footer>
     </div>
   );

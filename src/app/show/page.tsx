@@ -6,7 +6,7 @@ const ShowPage = () => {
   return (
     <div className="bg-black text-white min-h-screen font-mono flex flex-col">
       <header className="fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-50 bg-black/90 backdrop-blur-sm border-b border-red-500/20">
-        <Link href="/" className="text-xl md:text-2xl font-bold font-headline tracking-wider">FAULTAINMENT</Link>
+        <Link href="/" className="text-xl md:text-2xl font-bold font-headline tracking-wider">FAULTAINMENT*</Link>
         <nav className="hidden md:flex space-x-6">
           <Link href="/shop" className="hover:text-brand-red transition-colors text-sm tracking-wider">SHOP</Link>
           <Link href="/show" className="text-brand-red text-sm tracking-wider">SHOW</Link>
@@ -111,7 +111,7 @@ const ShowPage = () => {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-xs md:text-sm text-gray-400">
-              <p>&copy; 2025 FAULTAINMENT. ALL RIGHTS RESERVED.</p>
+              <p>&copy; 2025 FAULTAINMENT*. ALL RIGHTS RESERVED.</p>
             </div>
             <div className="flex space-x-6 text-xs md:text-sm">
               <Link href="/" className="hover:text-brand-red transition-colors">HOME</Link>

@@ -18,23 +18,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FAULTAINMENT - Fashion Meets Digital Art",
+  title: "FAULTAINMENT* - Fashion Meets Digital Art",
   description: "Exclusive fashion drops with glitch aesthetics. Limited collections, underground shows, and digital art fusion. Experience the void.",
   keywords: "fashion, streetwear, glitch art, exclusive drops, underground fashion, digital art, limited edition",
-  authors: [{ name: "Faultainment" }],
-  creator: "Faultainment",
-  publisher: "Faultainment",
+  authors: [{ name: "Faultainment*" }],
+  creator: "Faultainment*",
+  publisher: "Faultainment*",
   robots: "index, follow",
   openGraph: {
-    title: "FAULTAINMENT - Fashion Meets Digital Art",
+    title: "FAULTAINMENT* - Fashion Meets Digital Art",
     description: "Exclusive fashion drops with glitch aesthetics. Limited collections, underground shows, and digital art fusion.",
     type: "website",
     locale: "en_US",
-    siteName: "Faultainment",
+    siteName: "Faultainment*",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FAULTAINMENT - Fashion Meets Digital Art",
+    title: "FAULTAINMENT* - Fashion Meets Digital Art",
     description: "Exclusive fashion drops with glitch aesthetics. Limited collections, underground shows, and digital art fusion.",
     creator: "@faultainment",
   },
@@ -60,14 +60,14 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Faultainment" />
+        <meta name="apple-mobile-web-app-title" content="Faultainment*" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Faultainment",
+              "name": "Faultainment*",
               "description": "Exclusive fashion drops with glitch aesthetics",
               "url": "https://faultainment.com",
               "logo": "https://faultainment.com/logo.png",

@@ -4,7 +4,7 @@ export default function Campaigns() {
   return (
     <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center text-center p-4">
       <header className="absolute top-0 w-full p-4 flex justify-between items-center">
-        <h1 className="text-2xl font-headline tracking-widest">FAULTAINMENT</h1>
+        <h1 className="text-2xl font-headline tracking-widest">FAULTAINMENT*</h1>
         <nav className="flex space-x-4">
           <a href="/shop" className="hover:text-brand-red transition-colors">SHOP</a>
           <a href="/campaigns" className="hover:text-brand-red transition-colors">CAMPAIGNS</a>
@@ -16,7 +16,7 @@ export default function Campaigns() {
       <main className="flex flex-col items-center justify-center flex-grow max-w-4xl">
         <h2 className="text-5xl md:text-7xl font-headline glitch mb-8" data-text="GLITCH THE NORM">GLITCH THE NORM</h2>
         <p className="text-lg mb-6">
-          At Faultainment, we celebrate diversity and body positivity through our inclusive sizing and storytelling campaigns. Our collections are designed for every body, glitching societal norms and empowering you to express your unique self.
+          At Faultainment*, we celebrate diversity and body positivity through our inclusive sizing and storytelling campaigns. Our collections are designed for every body, glitching societal norms and empowering you to express your unique self.
         </p>
         <section className="mb-8">
           <h3 className="text-3xl font-bold mb-4">Our Stories</h3>
@@ -36,7 +36,7 @@ export default function Campaigns() {
       </main>
 
       <footer className="w-full p-4 text-center">
-        <p>&copy; {new Date().getFullYear()} FAULTAINMENT. ALL RIGHTS RESERVED.</p>
+        <p>&copy; {new Date().getFullYear()} FAULTAINMENT*. ALL RIGHTS RESERVED.</p>
       </footer>
     </div>
   );
