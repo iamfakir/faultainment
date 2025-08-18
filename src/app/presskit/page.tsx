@@ -199,7 +199,7 @@ const PressKitPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="press-kit-container">
+    <div className="press-kit-container pt-20">
       <style jsx global>{`
         /* CSS VARIABLES - Dark Theme */
         :root {

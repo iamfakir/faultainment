@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Campaigns() {
   return (
-    <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center text-center p-4">
+    <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center text-center p-4 pt-20">
       <header className="absolute top-0 w-full p-4 flex justify-between items-center">
         <h1 className="text-2xl font-headline tracking-widest">FAULTAINMENT*</h1>
         <nav className="flex space-x-4">

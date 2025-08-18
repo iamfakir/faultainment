@@ -4,7 +4,7 @@ import "./globals.css";
 import PageTransition from "./PageTransition";
 import CustomCursor from "./components/CustomCursor";
 import Link from "next/link";
-import Header from "./components/Header";
+import Header from "@/app/components/Header";
 
 
 
