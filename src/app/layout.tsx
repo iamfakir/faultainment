@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import PageTransition from "./PageTransition";
 import CustomCursor from "./components/CustomCursor";
+import Link from "next/link";
+import Header from "./components/Header";
 
 
 
@@ -83,6 +85,9 @@ export default function RootLayout({
   className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 >
   <CustomCursor />
+  {/* Header */}
+  <Header />
+
   <PageTransition>{children}</PageTransition>
 </body>
     </html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artist EPK</title>
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --accent: #F04B4B;
+      --bg: #ffffff;
+      --text: #111111;
+      --font-head: 'Arial Black', sans-serif;
+      --font-body: 'Helvetica Neue', Arial, sans-serif;
+      --space: 2rem;
+    }
+
+    /* RESET & BASE */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; }
+    h1, h2, h3 { font-family: var(--font-head); letter-spacing: 0.03em; }
+    img { max-width: 100%; height: auto; display: block; }
+    section { padding: var(--space) calc(var(--space) * .5); max-width: 1200px; margin: 0 auto; opacity: 0; transform: translateY(30px); transition: all .6s ease-out; }
+    section.visible { opacity: 1; transform: translateY(0); }
+    .tag { color: var(--accent); font-size: .9rem; margin-bottom: .75rem; font-weight: bold; }
+
+    /* HERO */
+    .hero { padding: 0; position: relative; text-align: center; }
+    .hero-banner { width: 100%; height: 60vh; background: url('https://unsplash.it/1920/1080?image=1067') center/cover no-repeat; }
+    .hero-text { position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%); color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.6); }
+    .hero-text h1 { font-size: clamp(2rem, 6vw, 4rem); margin-bottom: .5rem; }
+
+    /* QUICK STATS */
+    .stats { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; text-align: center; background: #fafafa; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+    .stat { flex: 1 1 120px; padding: 1.5rem .5rem; }
+    .stat h3 { font-size: 2rem; color: var(--accent); }
+
+    /* ABOUT */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space); align-items: center; }
+    .about img { border-radius: 6px; }
+
+    /* ACHIEVEMENTS GRID */
+    .achievements { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); }
+    .card { border: 1px solid #eee; padding: 1.25rem; border-radius: 4px; text-align: center; }
+    .card-icon { font-size: 2rem; color: var(--accent); margin-bottom: .5rem; }
+
+    /* CAROUSEL */
+    .carousel { display: flex; overflow-x: auto; gap: 1rem; scroll-snap-type: x mandatory; padding-bottom: .5rem; }
+    .carousel::-webkit-scrollbar { height: 6px; }
+    .carousel::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+    .tile { scroll-snap-align: start; flex: 0 0 300px; position: relative; cursor: pointer; }
+    .tile img { width: 100%; border-radius: 4px; }
+    .tile span { position: absolute; bottom: 4px; left: 4px; background: rgba(0,0,0,.7); color:#fff; font-size:.8rem; padding:2px 6px; border-radius:3px; }
+
+    /* MASONRY */
+    .masonry { column-count: 3; column-gap: 1rem; }
+    .masonry img { break-inside: avoid; margin-bottom: 1rem; border-radius:4px; }
+
+    /* VIDEO */
+    .video-wrapper { position: relative; padding-top: 56.25%; }
+    .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
+
+    /* TOUR TABLE */
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: .75rem; border-bottom: 1px solid #ddd; text-align: left; }
+    th { background: #fafafa; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem .5rem; font-size: .9rem; border-top: 1px solid #eee; }
+    .socials { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+    .socials i { font-size: 1.5rem; color: var(--accent); }
+
+    /* RESPONSIVE */
+    @media (max-width: 767px) {
+      .about { grid-template-columns: 1fr; }
+      .hero-banner { height: 50vh; }
+      .masonry { column-count: 2; }
+    }
+    @media (max-width: 480px) {
+      .masonry { column-count: 1; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-banner"></div>
+    <div class="hero-text">
+      <h1>ARTIST NAME</h1>
+      <p>Short Tagline Goes Here</p>
+    </div>
+  </section>
+
+  <!-- QUICK STATS -->
+  <section class="stats" id="stats">
+    <div class="stat"><h3>0</h3><p>Monthly Listeners</p></div>
+    <div class="stat"><h3>0</h3><p>Total Streams</p></div>
+    <div class="stat"><h3>0</h3><p>Followers</p></div>
+    <div class="stat"><h3>0</h3><p>Awards</p></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <img src="https://unsplash.it/400/500?image=1062" alt="Portrait" width="400" height="500" />
+    <div>
+      <span class="tag">ABOUT</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum, arcu ut vulputate pretium, sapien velit volutpat dui, id bibendum nulla arcu sit amet justo. Aliquam erat volutpat.</p>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <span class="tag">NOTABLE ACHIEVEMENTS</span>
+    <div class="achievements">
+      <div class="card"><div class="card-icon"><i class="fas fa-trophy"></i></div><h3>Headline</h3><p>One-line blurb.</p></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-music"></i></div><h3>Headline</h3><p>One-line blurb.</p></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-chart-line"></i></div><h3>Headline</h3><p>One-line blurb.</p></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-star"></i></div><h3>Headline</h3><p>One-line blurb.</p></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-fire"></i></div><h3>Headline</h3><p>One-line blurb.</p></div>
+      <div class="card"><div class="card-icon"><i class="fas fa-heart"></i></div><h3>Headline</h3><p>One-line blurb.</p></div>
+    </div>
+  </section>
+
+  <!-- MUSIC RELEASES -->
+  <section id="releases">
+    <span class="tag">MUSIC RELEASES</span>
+    <div class="carousel" id="carousel">
+      <a class="tile" href="#"><img src="https://unsplash.it/300/300?image=1080" alt="Album 1" /><span>Album 1</span></a>
+      <a class="tile" href="#"><img src="https://unsplash.it/300/300?image=1074" alt="Album 2" /><span>Album 2</span></a>
+      <a class="tile" href="#"><img src="https://unsplash.it/300/300?image=1067" alt="Album 3" /><span>Album 3</span></a>
+      <a class="tile" href="#"><img src="https://unsplash.it/300/300?image=1050" alt="Album 4" /><span>Album 4</span></a>
+      <a class="tile" href="#"><img src="https://unsplash.it/300/300?image=1043" alt="Album 5" /><span>Album 5</span></a>
+    </div>
+  </section>
+
+  <!-- PRESS PHOTOS -->
+  <section id="photos">
+    <span class="tag">PRESS PHOTOS</span>
+    <div class="masonry">
+      <img src="https://unsplash.it/600/800?image=1005" alt="press1"/>
+      <img src="https://unsplash.it/600/600?image=1011" alt="press2"/>
+      <img src="https://unsplash.it/600/700?image=1021" alt="press3"/>
+      <img src="https://unsplash.it/600/900?image=1031" alt="press4"/>
+      <img src="https://unsplash.it/600/650?image=1041" alt="press5"/>
+      <img src="https://unsplash.it/600/750?image=1051" alt="press6"/>
+    </div>
+  </section>
+
+  <!-- VIDEO SPOTLIGHT -->
+  <section id="video">
+    <span class="tag">VIDEO SPOTLIGHT</span>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video placeholder" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- TOUR DATES -->
+  <section id="tour">
+    <span class="tag">UPCOMING TOUR DATES</span>
+    <table>
+      <thead><tr><th>Date</th><th>City</th><th>Venue</th></tr></thead>
+      <tbody>
+        <tr><td>01 Jan 2026</td><td>City A</td><td>Venue A</td></tr>
+        <tr><td>05 Jan 2026</td><td>City B</td><td>Venue B</td></tr>
+        <tr><td>10 Jan 2026</td><td>City C</td><td>Venue C</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact">
+    <div class="socials">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+    <p>Manager: <a href="mailto:manager@example.com">manager@example.com</a> | PR: <a href="mailto:pr@example.com">pr@example.com</a></p>
+    <p style="margin-top: .5rem;">© 2025 Artist Name</p>
+  </footer>
+
+  <script>
+    // IntersectionObserver for fade-in sections
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target);} });
+    },{threshold:0.15});
+    document.querySelectorAll('section').forEach(sec=>obs.observe(sec));
+  </script>
+</body>
+</html>

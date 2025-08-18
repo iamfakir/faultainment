@@ -16,19 +16,13 @@ export default function Archive() {
   }, []);
   
   const archiveItems = [
-    { id: 1, title: 'OPIUM COLLECTION', date: 'FALL 2023', link: '/shop' },
-    { id: 2, title: 'FAULT KAI EXCLUSIVE', date: 'SUMMER 2023', link: '#' },
-    { id: 3, title: 'VOID SERIES', date: 'SPRING 2023', link: '#' },
-    { id: 4, title: 'RED ROOM SHOW', date: 'WINTER 2022', link: '/show' },
-    { id: 5, title: 'GENESIS DROP', date: 'FALL 2022', link: '#' },
+    { id: 6, title: 'ROTR FALL 2025', date: 'FALL 2025', link: '#' },
   ];
   
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
       <header className="p-4 text-center border-b border-gray-800">
-        <Link href="/" className="inline-block mb-4">
-          <h1 className="text-2xl font-headline tracking-widest">FAULTAINMENT*</h1>
-        </Link>
+        <Link href="/" className="inline-block mb-4"></Link>
       </header>
       
       <main className="flex-grow p-4 md:p-8 max-w-4xl mx-auto w-full">

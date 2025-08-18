@@ -61,7 +61,7 @@ export default function OpiumShowcase() {
           {/* Description */}
           <div className="space-y-4 max-w-2xl mx-auto text-center">
             <p className="text-lg md:text-xl font-medium">
-              EXCLUSIVE PERFORMANCE BY FAULT KAI
+              EXCLUSIVE PERFORMANCE BY FAULTAINMENT*
             </p>
             <p className="text-base md:text-lg">
               AUGUST 9TH. LIMITED TICKETS AVAILABLE.

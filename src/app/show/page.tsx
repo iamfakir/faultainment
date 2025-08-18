@@ -35,7 +35,7 @@ const ShowPage = () => {
           
           <Reveal>
             <p className="mt-6 text-sm md:text-lg text-center animate-pulse tracking-wider">
-              UPCOMING SHOW <span className="text-brand-red">•</span> 9.8.2024 <span className="text-brand-red">•</span> EXCLUSIVE PERFORMANCE BY FAULT KAI
+              UPCOMING SHOW <span className="text-brand-red">•</span> 9.8.2024 <span className="text-brand-red">•</span> EXCLUSIVE PERFORMANCE BY FAULTAINMENT*
             </p>
           </Reveal>
 
@@ -60,7 +60,7 @@ const ShowPage = () => {
                 <h2 className="text-2xl md:text-4xl font-headline font-bold mb-6 text-center tracking-wider">LINEUP</h2>
                 <div className="space-y-4">
                   <div className="text-center p-4 border border-red-500/50 bg-black">
-                    <span className="text-lg md:text-xl font-bold text-red-500 tracking-wider">EXCLUSIVE: FAULT KAI</span>
+                    <span className="text-lg md:text-xl font-bold text-red-500 tracking-wider">EXCLUSIVE: FAULTAINMENT*</span>
                   </div>
                 </div>
               </div>
