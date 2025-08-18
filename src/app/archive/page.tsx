@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Rotr25Component from '../components/Rotr25Component';
 
 export default function Archive() {
   const [isLoading, setIsLoading] = useState(true);
+
   
   // Simulate loading state
   useEffect(() => {
@@ -16,8 +18,10 @@ export default function Archive() {
   }, []);
   
   const archiveItems = [
-    { id: 6, title: 'ROTR FALL 2025', date: 'FALL 2025', link: '#' },
+    { id: 6, title: 'ROTR FALL 2025', date: 'FALL 2025', link: '/rotr25' },
   ];
+
+
   
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">

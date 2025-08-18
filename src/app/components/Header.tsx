@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from "next/link";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -15,9 +15,9 @@ export default function Header() {
     const handleScroll = () => {
       const offset = window.scrollY;
       if (offset > 50) { // Adjust this value as needed
-        setScrolled(true);
+        setIsScrolled(true);
       } else {
-        setScrolled(false);
+        setIsScrolled(false);
       }
     };
 
@@ -28,7 +28,9 @@ export default function Header() {
     };
   }, []);
   return (
-    <header className={`fixed top-0 w-full flex items-center justify-between px-6 py-4 z-50 pointer-events-none select-none transition-all duration-300 ${scrolled ? 'border-b border-gray-800 bg-black bg-opacity-20' : ''}`}>
+    <header
+      className={`fixed top-0 z-50 w-full flex items-center justify-between px-6 py-4 transition-all duration-300 ease-in-out ${isScrolled ? "bg-black shadow-lg" : "bg-transparent"}`}
+    >
       {/* Left section */}
       <div className="flex flex-col items-start w-1/3">
         <Link href="/" className="text-lg md:text-xl font-bold font-headline tracking-wider uppercase drop-shadow pointer-events-auto">
