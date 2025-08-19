@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import PageTransition from "./PageTransition";
 import CustomCursor from "./components/CustomCursor";
-import Link from "next/link";
 import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 
 
 
@@ -42,10 +42,14 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: '#000000',
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
+  colorScheme: 'dark',
 };
 
 export default function RootLayout({
@@ -54,15 +58,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="canonical" href="https://faultainment.com" />
+        
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Faultainment*" />
+        <meta name="theme-color" content="#000000" />
+        
+        {/* Preload critical assets */}
+        <link
+          rel="preload"
+          href="/_next/static/media/your-font-file.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -81,15 +100,28 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-  className={`${geistSans.variable} ${geistMono.variable} antialiased`}
->
-  <CustomCursor />
-  {/* Header */}
-  <Header />
-
-  <PageTransition>{children}</PageTransition>
-</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white flex flex-col min-h-screen`}>
+        <CustomCursor />
+        
+        {/* Skip to main content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:bg-black focus:text-white focus:py-2 focus:px-4 focus:z-50"
+        >
+          Skip to main content
+        </a>
+        
+        <Header />
+        
+        <main id="main-content" className="flex-grow">
+          <PageTransition>{children}</PageTransition>
+        </main>
+        
+        <Footer />
+        
+        {/* Loading indicator for route transitions */}
+        <div id="page-transition" className="fixed inset-0 bg-black z-[9999] pointer-events-none opacity-0 transition-opacity duration-300" />
+      </body>
     </html>
   );
 }

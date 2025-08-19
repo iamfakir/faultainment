@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
   --background: #000000;
   --foreground: #ffffff;
+  --primary: #ff0000;
+  --secondary: #0000ff;
+  --muted: #333333;
+  --accent: #00ff00;
+  --radius: 4px;
+  --transition: all 0.2s ease;
 }
 
 @theme {
@@ -11,8 +17,17 @@
   --color-foreground: var(--foreground);
   --font-sans: 'Space Grotesk', sans-serif;
   --font-headline: 'Archivo Black', sans-serif;
-  --color-brand-red: #ff0000;
-  --color-brand-blue: #0000ff;
+  --color-brand-red: var(--primary);
+  --color-brand-blue: var(--secondary);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 body {
@@ -22,6 +37,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none; /* Hide default cursor */
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .custom-cursor {
@@ -41,24 +60,142 @@ body {
   100% { opacity: 0.5; }
 }
 
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
+h2 { font-size: clamp(2rem, 6vw, 3rem); }
+h3 { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+h4 { font-size: clamp(1.5rem, 4vw, 2rem); }
+
+p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+/* Links & Buttons */
 a, button {
-  transition: all 0.3s ease;
+  transition: var(--transition);
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  cursor: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 a:hover, button:hover {
-  text-shadow: 0 0 5px var(--color-brand-red);
+  color: var(--primary);
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: var(--background);
+  transform: translateY(-2px);
 }
 
 
+/* Animations & Transitions */
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.5s ease-out;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Delay classes for staggered animations */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 body::before {
