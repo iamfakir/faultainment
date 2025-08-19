@@ -4,9 +4,11 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import ImageModal from './ImageModal';
 
-interface Rotr25ComponentProps {}
+interface Rotr25ComponentProps {
+  onBack: () => void;
+}
 
-const Rotr25Component = ({}: Rotr25ComponentProps) => {
+const Rotr25Component = ({ onBack }: Rotr25ComponentProps) => {
   const [imageFilenames, setImageFilenames] = useState<string[]>([]);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const [error, setError] = useState<string | null>(null);
@@ -110,16 +112,16 @@ const Rotr25Component = ({}: Rotr25ComponentProps) => {
     return <p className="text-red-500">{error}</p>;
   }
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, []);
-
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
-      <div className={`rotr25-container relative w-full h-full p-4 ${isGridLayout ? 'grid grid-cols-2 md:grid-cols-4 gap-2 overflow-auto' : 'overflow-hidden'}`}>
+    <div className="relative w-full min-h-screen bg-black overflow-hidden">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="absolute top-4 left-4 z-50 text-white text-sm px-4 py-2 bg-gray-800 hover:bg-gray-700 transition-colors"
+      >
+        &larr; Back to Archive
+      </button>
+      <div className={`rotr25-container relative w-full h-[100vh] p-4 ${isGridLayout ? 'grid grid-cols-2 md:grid-cols-4 gap-2 overflow-auto' : 'overflow-hidden'}`}>
         {imageFilenames.map((filename, index) => {
           const isLoaded = loadedImages.has(index);
           const { top, left, rotation, width, height } = imagePositions[index] || {};

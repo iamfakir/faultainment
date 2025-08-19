@@ -41,7 +41,7 @@ export default function Header() {
         <Link href="/shop" className="text-sm text-white/60 hover:text-white transition-colors">Shop</Link>
         <Link href="/discography" className="text-sm text-white/60 hover:text-white transition-colors">Discography</Link>
         <Link href="/presskit" className="text-sm text-white/60 hover:text-white transition-colors">Presskit</Link>
-        <Link href="/archive" className="text-sm text-white/60 hover:text-white transition-colors">Archive</Link>
+        <Link href="/rotr25" className="text-sm text-white/60 hover:text-white transition-colors">Archive</Link>
       </nav>
       <div className="hidden md:flex w-1/3 justify-end">
         <a href="#" className="text-sm text-white/60 hover:text-white transition-colors pointer-events-auto">
@@ -64,7 +64,7 @@ export default function Header() {
           <Link href="/shop" className="text-white hover:text-white/80 transition-colors" onClick={toggleMobileMenu}>Shop</Link>
           <Link href="/discography" className="text-white hover:text-white/80 transition-colors" onClick={toggleMobileMenu}>Discography</Link>
           <Link href="/presskit" className="text-white hover:text-white/80 transition-colors" onClick={toggleMobileMenu}>Presskit</Link>
-          <Link href="/archive" className="text-white hover:text-white/80 transition-colors" onClick={toggleMobileMenu}>Archive</Link>
+          <Link href="/rotr25" className="text-white hover:text-white/80 transition-colors" onClick={toggleMobileMenu}>Archive</Link>
           <a href="#" className="text-white hover:text-white/80 transition-colors" onClick={toggleMobileMenu}>
             Have a key?
           </a>

@@ -6,7 +6,7 @@ import Rotr25Component from '../components/Rotr25Component';
 
 export default function Archive() {
   const [isLoading, setIsLoading] = useState(true);
-
+  const [showRotr25, setShowRotr25] = useState(false);
   
   // Simulate loading state
   useEffect(() => {
@@ -21,12 +21,25 @@ export default function Archive() {
     { id: 6, title: 'ROTR FALL 2025', date: 'FALL 2025', link: '/rotr25' },
   ];
 
+  const handleRotr25Click = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowRotr25(true);
+  };
 
+  const handleBackToArchive = () => {
+    setShowRotr25(false);
+  };
   
+  if (showRotr25) {
+    return <Rotr25Component onBack={handleBackToArchive} />;
+  }
+
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
       <header className="p-4 text-center border-b border-gray-800">
-        <Link href="/" className="inline-block mb-4"></Link>
+        <Link href="/" className="inline-block mb-4">
+          <img src="/images/logo.svg" alt="FAULTAINMENT*" className="h-12" />
+        </Link>
       </header>
       
       <main className="flex-grow p-4 md:p-8 max-w-4xl mx-auto w-full">
@@ -43,7 +56,7 @@ export default function Archive() {
                 key={item.id} 
                 className="border border-gray-800 p-4 hover:border-brand-red transition-colors group"
               >
-                <Link href={item.link} className="block">
+                <Link href={item.link} className="block" onClick={item.id === 6 ? handleRotr25Click : undefined}>
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center">
                     <h3 className="text-xl md:text-2xl font-bold group-hover:text-brand-red transition-colors">
                       {item.title}

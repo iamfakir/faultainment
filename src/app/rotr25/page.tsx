@@ -5,12 +5,6 @@ import Image from 'next/image';
 import ImageModal from '../components/ImageModal';
 
 const Rotr25Page = () => {
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, []);
   const [imageFilenames, setImageFilenames] = useState<string[]>([]);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
   const [error, setError] = useState<string | null>(null);
@@ -99,9 +93,9 @@ const Rotr25Page = () => {
   }
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden flex flex-col">
+    <div className="relative w-full min-h-screen bg-black pt-24 md:pt-32 flex flex-col justify-between">
 
-      <div className={`relative w-full p-4 md:p-8 flex-grow ${isGridLayout ? 'grid grid-cols-2 md:grid-cols-4 gap-4' : 'overflow-hidden'}`}>
+      <div className={`relative w-full p-4 md:p-8 flex-grow ${isGridLayout ? 'grid grid-cols-2 md:grid-cols-4 gap-4' : 'overflow-auto h-[calc(100vh-200px)]'}`}>
         {imageFilenames.map((filename, index) => {
           const isLoaded = loadedImages.has(index);
           const { top, left, rotation, width, height } = imagePositions[index] || {};
