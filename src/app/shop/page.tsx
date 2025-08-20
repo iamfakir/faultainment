@@ -1,6 +1,17 @@
 'use client';
 import { useEffect } from 'react';
 
+declare global {
+  interface Window {
+    ShopifyBuy: {
+      buildClient: (config: any) => any;
+      UI: {
+        onReady: (client: any) => Promise<any>;
+      };
+    };
+  }
+}
+
 export default function Shop() {
   useEffect(() => {
     if (typeof window === 'undefined' || typeof document === 'undefined') {
@@ -28,7 +39,7 @@ export default function Shop() {
           domain: 'stteu4-3n.myshopify.com',
           storefrontAccessToken: '2531adf265f4abd1717b02a1f42f9b07',
         });
-        window.ShopifyBuy.UI.onReady(client).then((ui) => {
+        window.ShopifyBuy.UI.onReady(client).then((ui: any) => {
           const node = document.getElementById('product-component-1755666147073');
           if (!node) {
             console.error('Product component node not found');
