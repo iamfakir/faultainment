@@ -68,7 +68,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Branding */}
           <div className="space-y-6">
-            <Link href="/" className="text-2xl font-bold font-headline tracking-wider uppercase">
+            <Link href="/" className="text-2xl font-headline uppercase">
               FAULTAINMENT*
             </Link>
             <p className="text-white/60 text-sm leading-relaxed">
@@ -98,7 +98,7 @@ export default function Footer() {
           {/* Footer Links */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-normal text-white uppercase tracking-wider mb-4">
                 {section.title}
               </h3>
               <ul className="space-y-3">

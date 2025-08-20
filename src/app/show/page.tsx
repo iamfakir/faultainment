@@ -57,7 +57,9 @@ const ShowPage = () => {
           <div className="grid md:grid-cols-2 gap-12 mt-16">
             <Reveal>
               <div className="border border-red-500/30 p-6 md:p-8 bg-red-500/5">
-                <h2 className="text-2xl md:text-4xl font-headline font-bold mb-6 text-center tracking-wider">LINEUP</h2>
+                <h2 className="text-2xl md:text-4xl font-headline mb-6 text-center tracking-wider">
+                  LINEUP
+                </h2>
                 <div className="space-y-4">
                   <div className="text-center p-4 border border-red-500/50 bg-black">
                     <span className="text-lg md:text-xl font-bold text-red-500 tracking-wider">EXCLUSIVE: FAULTAINMENT*</span>
@@ -68,7 +70,9 @@ const ShowPage = () => {
 
             <Reveal>
               <div className="border border-red-500/30 p-6 md:p-8 bg-red-500/5">
-                <h2 className="text-2xl md:text-4xl font-headline font-bold mb-6 text-center tracking-wider">VENUE</h2>
+                <h2 className="text-2xl md:text-4xl font-headline mb-6 text-center tracking-wider">
+                  VENUE
+                </h2>
                 <div className="text-center space-y-4">
                   <div className="p-4 border border-red-500/50 bg-black">
                     <a href="https://maps.app.goo.gl/pujhytLFB2jwe5797" 

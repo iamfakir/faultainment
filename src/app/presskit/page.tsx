@@ -490,8 +490,24 @@ const PressKitPage: React.FC = () => {
         }
 
         /* MASONRY */
-        .press-kit-container .masonry { column-count: 3; column-gap: 1rem; }
-        .press-kit-container .masonry img { break-inside: avoid; margin-bottom: 1rem; border-radius:4px; }
+        .press-kit-container .masonry {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 1rem;
+          width: 100%;
+        }
+        .press-kit-container .masonry img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          transition: transform 0.3s ease;
+          display: block;
+          cursor: pointer;
+        }
+        .press-kit-container .masonry img:hover {
+          transform: scale(1.02);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
 
         /* VIDEO */
         .press-kit-container .video-wrapper { position: relative; padding-top: 56.25%; }
@@ -752,15 +768,49 @@ const PressKitPage: React.FC = () => {
       </section>
 
       {/* PRESS PHOTOS */}
-      <section id="photos">
-        <span className="tag">PRESS PHOTOS</span>
-        <div className="masonry">
-          <img src="/rotr25/images/IMG_2152.jpg" alt="press1" loading="lazy" className="press-photo" onClick={() => openModal(0)} />
-          <img src="/rotr25/images/IMG_2153.jpg" alt="press2" loading="lazy" className="press-photo" onClick={() => openModal(1)} />
-          <img src="/rotr25/images/IMG_2163.jpg" alt="press3" loading="lazy" className="press-photo" onClick={() => openModal(2)} />
-          <img src="/rotr25/images/IMG_2182.jpg" alt="press4" loading="lazy" className="press-photo" onClick={() => openModal(3)} />
-          <img src="/rotr25/images/IMG_2238.jpg" alt="press5" loading="lazy" className="press-photo" onClick={() => openModal(4)} />
-          <img src="/rotr25/images/IMG_2271.jpg" alt="press6" loading="lazy" className="press-photo" onClick={() => openModal(5)} />
+      <section id="photos" style={{ marginBottom: '3rem' }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#fff' }}>PRESS PHOTOS</h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+          gap: '1rem',
+          width: '100%',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}>
+          {pressImages.map((img, index) => (
+            <div 
+              key={index}
+              style={{
+                position: 'relative',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                cursor: 'pointer',
+                aspectRatio: '3/4',
+                background: '#2a2a2a',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+              onClick={() => openModal(index)}
+            >
+              <img 
+                src={img} 
+                alt={`Press photo ${index + 1}`} 
+                loading="lazy"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  transition: 'transform 0.3s ease',
+                }}
+                onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
+                onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              />
+            </div>
+          ))}
         </div>
       </section>
 
